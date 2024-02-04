@@ -1,0 +1,51 @@
+{
+  "name": "vite-plugin-strip",
+  "author": "Yaro <852373851@qq.com>",
+  "version": "1.0.0",
+  "packageManager": "pnpm@7.1.9",
+  "engines": {
+    "node": ">=14",
+    "pnpm": ">=7.1.9"
+  },
+  "keywords": [],
+  "description": "",
+  "scripts": {
+    "play:vue3": "pnpm run -r --filter=./packages/playground/vue3 dev",
+    "dev": "pnpm run -r --filter=./packages/core dev",
+    "build": "pnpm run -r --filter=./packages/core build",
+    "format": "prettier --write --cache .",
+    "lint": "eslint --fix --ext .js,.ts,.vue .",
+    "release": "pnpm build && changeset && changeset version && changeset publish",
+    "preinstall": "node ./scripts/preinstall.mjs",
+    "postinstall": "simple-git-hooks"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^0.36.0",
+    "@changesets/cli": "^2.26.0",
+    "@types/node": "^20.4.4",
+    "chalk": "^5.3.0",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^8.36.0",
+    "lint-staged": "^15.2.1",
+    "prettier": "^3.2.4",
+    "simple-git-hooks": "^2.9.0",
+    "tsup": "^8.0.1",
+    "typescript": "^5.0.2",
+    "vite": "^4.2.0",
+    "vue": "^3.2.47"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint-staged",
+    "commit-msg": "node scripts/verifyCommit.mjs"
+  },
+  "lint-staged": {
+    "*.{js,ts,vue,json,scss}": [
+      "prettier --write"
+    ]
+  }
+}

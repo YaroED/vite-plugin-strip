@@ -1,0 +1,44 @@
+{
+  "name": "vite-plugin-strip",
+  "version": "1.0.0",
+  "description": "Remove or strip specific code from your JavaScript or TypeScript.",
+  "author": "Yaro",
+  "license": "MIT",
+  "homepage": "https://github.com/YaroED/vite-plugin-strip#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YaroED/vite-plugin-strip.git"
+  },
+  "bugs": {
+    "url": "https://github.com/YaroED/vite-plugin-strip/issues"
+  },
+  "keywords": [
+    "vue",
+    "vite",
+    "console",
+    "vite-plugin",
+    "debug"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
+    },
+    "./src/*": "./src/*"
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "lint": "eslint --fix --ext .js,.ts,.vue .",
+    "dev": "tsup --watch",
+    "build": "tsup"
+  },
+  "peerDependencies": {
+    "vite": "^3.0.0-0 || ^4.0.0-0"
+  }
+}
