@@ -3,16 +3,21 @@ import { Plugin } from 'vite'
 interface VitePluginStripOptions {
   /**
    * 是否启用插件
+   * @default true
    */
   enabled?: boolean
+
   /**
    * 判断 当前的域名 是在 disableHostList 中，则禁用console.log
+   * @default []
    */
   disableHostList?: string[]
+
   /**
    * 开始标记
    * @default 'devBlock:start'
    * @example
+   *
    * ```ts
    * // devBlock:start
    * console.log('start')
@@ -20,6 +25,11 @@ interface VitePluginStripOptions {
    * ```
    */
   start?: string
+
+  /**
+   * 结束标记
+   * @default 'devBlock:end'
+   */
   end?: string
   enable?: () => void
 }
