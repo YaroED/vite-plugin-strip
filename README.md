@@ -41,7 +41,7 @@ import Strip from 'vite-plugin-strip'
 
 export default defineConfig({
   plugins: [Vue(), Strip({
-    disableLogHosts: ['abc.com']
+    domainList: ['abc.com']
   })],
 })
 ```
@@ -53,19 +53,22 @@ export default defineConfig({
 ```ts
 interface VitePluginStripOptions {
   /**
-   * 是否启用插件
+   * 是否启用插件所有功能
+   * @default true
    */
   enabled?: boolean
 
   /**
-   * 判断 当前的域名 是包含在 disableLogHosts 中，则禁用console.log
+   * 判断 location.host 是否在 domainList 中，如果是，它将覆盖默认的 console.log 函数，在调用时不执行任何操作
+   * @default []
    */
-  disableLogHosts?: string[]
+  domainList?: string[]
 
   /**
    * 开始标记
    * @default 'devBlock:start'
    * @example
+   *
    * ```ts
    * // devBlock:start
    * console.log('start')
@@ -74,7 +77,7 @@ interface VitePluginStripOptions {
    */
   start?: string
 
-  /** 
+  /**
    * 结束标记
    * @default 'devBlock:end'
    */
