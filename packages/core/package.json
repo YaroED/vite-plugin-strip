@@ -1,6 +1,6 @@
 {
   "name": "vite-plugin-strip",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Remove or strip specific code from your JavaScript or TypeScript.",
   "author": "Yaro",
   "license": "MIT",
