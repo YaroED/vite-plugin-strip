@@ -1,4 +1,5 @@
 # vite-plugin-strip
+![npm](https://img.shields.io/npm/v/vite-plugin-strip) ![Node.js version](https://img.shields.io/badge/Node.js-%E2%89%A516.0.0-brightgreen) 
 
 ## 📖 Introduction
 
@@ -6,6 +7,8 @@ vite-plugin-strip is a Vite plugin that allows you to remove or strip specific c
 
 
 ## 📦 Installation
+node version: >=12.0.0
+vite version: >=2.0.0
 
 ```bash
 
@@ -41,7 +44,7 @@ import Strip from 'vite-plugin-strip'
 
 export default defineConfig({
   plugins: [Vue(), Strip({
-    domainList: ['abc.com']
+    domainList: ['xxx.com']
   })],
 })
 ```
@@ -77,7 +80,7 @@ interface VitePluginStripOptions {
    */
   start?: string
 
-  /**
+  /** 
    * 结束标记
    * @default 'devBlock:end'
    */
