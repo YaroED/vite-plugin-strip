@@ -22,6 +22,10 @@ interface VitePluginStripOptions {
    * // devBlock:start
    * console.log('start')
    * // devBlock:end
+   * OR
+   * /* devBlock:start * /
+   * console.log('start')
+   * /* devBlock:end * /
    * ```
    */
   start?: string
